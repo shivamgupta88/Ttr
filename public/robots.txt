@@ -1,0 +1,42 @@
+# Robots.txt for TextToReels.in
+# Generated automatically for optimal SEO
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://texttoreels.in/sitemap-index.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block access to admin and API endpoints
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow specific bots full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: DotBot
+Disallow: /
+
+# Additional sitemap references for different content types
+Sitemap: https://texttoreels.in/sitemap-1.xml
+Sitemap: https://texttoreels.in/sitemap-2.xml

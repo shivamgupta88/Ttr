@@ -1,0 +1,49 @@
+{
+  "name": "texttoreels-frontend",
+  "version": "1.0.0",
+  "description": "TextToReels.in - Premium Text to Video Content Generator",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "next lint",
+    "export": "next build && next export",
+    "generate": "next build && next export",
+    "generate-static": "node scripts/generate-static-sites.js",
+    "generate-sitemaps": "node scripts/generate-sitemaps.js",
+    "generate-smart": "node scripts/smart-batch-generator.js",
+    "generate-demo": "node scripts/demo-static-generation.js",
+    "generate-netlify": "node scripts/selective-deployment.js",
+    "deploy-s3": "node scripts/deploy-to-s3.js",
+    "prepare-manual": "node scripts/prepare-manual-deploy.js",
+    "generate-all": "npm run generate-static && npm run generate-sitemaps",
+    "build-production": "npm run build && npm run generate-sitemaps",
+    "build-netlify": "npm run generate-netlify",
+    "build-manual": "npm run generate-demo && npm run prepare-manual",
+    "deploy-complete": "node scripts/deploy-complete.js",
+    "build-production": "npm run build && npm run generate-smart",
+    "build-complete": "node scripts/prepare-complete-deployment.js",
+    "deploy-ready": "npm run build-complete"
+  },
+  "dependencies": {
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "axios": "^1.6.2",
+    "styled-components": "^6.1.6",
+    "framer-motion": "^10.16.16",
+    "react-icons": "^4.12.0",
+    "react-helmet-async": "^2.0.4",
+    "swiper": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@types/styled-components": "^5.1.34",
+    "typescript": "^5.3.3",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4"
+  }
+}

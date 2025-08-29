@@ -1,0 +1,36 @@
+[build]
+  publish = "complete-deploy"
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Cache-Control = "public, max-age=3600"
+
+# Static content caching
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Asset caching
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Content page routing - serve HTML files directly
+[[redirects]]
+  from = "/content/:slug"
+  to = "/content/:slug.html"
+  status = 200
+
+# SPA fallback for Next.js routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

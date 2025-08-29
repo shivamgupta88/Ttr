@@ -1,0 +1,70 @@
+# Robots.txt for TextToReels.in
+# Optimized for better SEO and search engine crawling
+
+User-agent: *
+Allow: /
+
+# Allow important search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Block technical directories and files
+Disallow: /_next/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Block query parameters and tracking URLs
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*utm_*
+Disallow: /*#*
+
+# Block duplicate content patterns
+Disallow: /search*
+Disallow: /*?q=*
+Disallow: /*?page=*
+
+# Block aggressive crawlers and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MagpieRSS
+Disallow: /
+
+User-agent: ScreamingFrogSEOSpider
+Disallow: /
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Sitemap locations (optimized structure)
+Sitemap: https://texttoreels.in/sitemap.xml
+Sitemap: https://texttoreels.in/sitemap-pages.xml
+Sitemap: https://texttoreels.in/sitemap-content.xml
+Sitemap: https://texttoreels.in/sitemap-categories.xml
+
+# Host directive (helps with canonicalization)
+Host: https://texttoreels.in

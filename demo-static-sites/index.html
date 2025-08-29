@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Static Sites - Ollama Gemma3 Pipeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        
+        .header { 
+            text-align: center; 
+            margin-bottom: 4rem; 
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .header h1 { 
+            font-size: clamp(2.5rem, 6vw, 4rem); 
+            font-weight: 900; 
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timestamp {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 1rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .section { 
+            background: white; 
+            padding: 3rem; 
+            margin: 2.5rem 0; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .section h2 { 
+            color: #2d3748;
+            margin-bottom: 1.5rem; 
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        
+        .section p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .links { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+            gap: 1.5rem; 
+            margin-top: 2rem; 
+        }
+        
+        .link { 
+            display: block; 
+            padding: 1.8rem; 
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); 
+            border-radius: 15px; 
+            text-decoration: none; 
+            color: #2d3748; 
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .link:hover::before {
+            left: 0;
+        }
+        
+        .link:hover { 
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .link h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+        
+        .link p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .emoji {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        
+        .footer {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 4rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .section { padding: 2rem; }
+            .links { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Demo Static Sites</h1>
+            <p>Content generated using Ollama Gemma3 pipeline</p>
+            <p>Showcasing AI-powered content generation and static site building</p>
+            <div class="timestamp">Generated on: 8/29/2025, 12:49:55 AM</div>
+        </div>
+        
+        <div class="section">
+            <span class="emoji">🎬</span>
+            <h2>TextToReels Content</h2>
+            <p>AI-generated social media content with beautiful themes and engaging copy</p>
+            <div class="links">
+                
+                    <a href="./content/hindi-love-quotes-dark-theme-instagram.html" class="link">
+                        <h3>Hindi Love Quotes for Students | Dark Theme Instagram Posts</h3>
+                        <p><strong>love quotes (hindi)</strong> • Instagram Post</p>
+                        <p>Beautiful Hindi love quotes perfect for students to share on Instagram with stunning dark theme design.</p>
+                    </a>
+                
+                    <a href="./content/english-motivational-quotes-gradient-theme-linkedin.html" class="link">
+                        <h3>Motivational Quotes for Professionals | LinkedIn Posts</h3>
+                        <p><strong>motivational quotes (english)</strong> • LinkedIn Post</p>
+                        <p>Inspiring motivational quotes designed for professionals to boost their LinkedIn presence with gradient theme styling.</p>
+                    </a>
+                
+                    <a href="./content/hinglish-funny-memes-colorful-theme-twitter.html" class="link">
+                        <h3>Funny Hinglish Memes for Teenagers | Twitter Posts</h3>
+                        <p><strong>funny memes (hinglish)</strong> • Twitter Post</p>
+                        <p>Hilarious Hinglish memes designed for teenagers with vibrant colorful theme perfect for Twitter sharing.</p>
+                    </a>
+                
+            </div>
+        </div>
+        
+        <div class="section">
+            <span class="emoji">🏠</span>
+            <h2>Real Estate Sites</h2>
+            <p>Professional property listings with comprehensive information and beautiful design</p>
+            <div class="links">
+                
+                    <a href="./sites/mumbai-residential-apartments-bandra-premium.html" class="link">
+                        <h3>Premium Apartments in Bandra Mumbai | Best Real Estate</h3>
+                        <p><strong>Residential Apartments</strong> in Mumbai, Maharashtra</p>
+                        <p>Discover premium residential apartments in Bandra, Mumbai's most sought-after location with excellent connectivity and luxury amenities.</p>
+                    </a>
+                
+                    <a href="./sites/delhi-commercial-spaces-connaught-place-office.html" class="link">
+                        <h3>Premium Commercial Spaces in Connaught Place Delhi</h3>
+                        <p><strong>Commercial Spaces</strong> in Delhi, Delhi</p>
+                        <p>Premium commercial spaces in Connaught Place, Delhi's business hub with excellent connectivity and high footfall.</p>
+                    </a>
+                
+                    <a href="./sites/bangalore-independent-villas-whitefield-luxury.html" class="link">
+                        <h3>Luxury Independent Villas in Whitefield Bangalore</h3>
+                        <p><strong>Independent Villas</strong> in Bangalore, Karnataka</p>
+                        <p>Luxury independent villas in Whitefield, Bangalore's IT hub with modern amenities and excellent connectivity to tech parks.</p>
+                    </a>
+                
+            </div>
+        </div>
+        
+        <div class="section">
+            <span class="emoji">📊</span>
+            <h2>Generation Statistics</h2>
+            <p>Pipeline completed successfully with the following results:</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Content Pages</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Property Sites</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Total Pages</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <span class="emoji">⚡</span>
+            <h2>Pipeline Features</h2>
+            <p>This demonstration showcases the complete Ollama Gemma3 → Database → Static Sites pipeline:</p>
+            <div class="links">
+                <div class="link">
+                    <h3>🤖 AI Content Generation</h3>
+                    <p>Uses Ollama Gemma3 for generating high-quality, contextual content</p>
+                </div>
+                <div class="link">
+                    <h3>💾 Database Integration</h3>
+                    <p>Stores generated content in MongoDB with proper schema validation</p>
+                </div>
+                <div class="link">
+                    <h3>🎨 Beautiful Static Sites</h3>
+                    <p>Generates responsive, SEO-optimized HTML pages with modern design</p>
+                </div>
+                <div class="link">
+                    <h3>🔄 Complete Pipeline</h3>
+                    <p>End-to-end automation from AI generation to deployed static sites</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>🎉 Demo Completed Successfully!</h3>
+            <p>This showcase demonstrates the power of combining AI content generation with automated static site building.</p>
+            <p><strong>Next Steps:</strong> Use <code>--real-ai</code> flag to generate content with actual Ollama Gemma3 model</p>
+        </div>
+    </div>
+</body>
+</html>
