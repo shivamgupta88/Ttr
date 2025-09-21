@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import PremiumFeatures from '@/components/PremiumFeatures';
 import VideoShowcase from '@/components/VideoShowcase';
 import FuturisticStats from '@/components/FuturisticStats';
+import QuickLinks from '@/components/QuickLinks';
 import { PageContent } from '@/types';
 import { pagesApi } from '@/utils/api';
 import styled from 'styled-components';
@@ -316,6 +317,12 @@ const HomePage: React.FC<HomeProps> = ({ featuredPages }) => {
           </CenteredContainer>
         </ContentContainer>
       </ContentSection>
+
+      <QuickLinks
+        currentTheme="love_and_romance"
+        currentLanguage="hindi"
+        limit={6}
+      />
     </Layout>
   );
 };

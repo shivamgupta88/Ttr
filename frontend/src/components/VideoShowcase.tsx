@@ -63,10 +63,10 @@ const VideoCard = styled(motion.div)`
   }
 `;
 
-const VideoThumbnail = styled.div<{ bgImage: string }>`
+const VideoThumbnail = styled.div<{ $bgImage: string }>`
   width: 100%;
   height: 70%;
-  background: linear-gradient(135deg, ${props => props.bgImage});
+  background: linear-gradient(135deg, ${props => props.$bgImage});
   position: relative;
   display: flex;
   align-items: center;
@@ -345,7 +345,7 @@ const VideoShowcase: React.FC = () => {
               whileHover={{ y: -5 }}
               onClick={() => setSelectedVideo(video.id)}
             >
-              <VideoThumbnail bgImage={video.thumbnail}>
+              <VideoThumbnail $bgImage={video.thumbnail}>
                 <PlayButton
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -416,8 +416,8 @@ const VideoShowcase: React.FC = () => {
               <CloseButton onClick={() => setSelectedVideo(null)}>
                 ×
               </CloseButton>
-              <VideoThumbnail 
-                bgImage={videos.find(v => v.id === selectedVideo)?.thumbnail || '#667eea, #764ba2'}
+              <VideoThumbnail
+                $bgImage={videos.find(v => v.id === selectedVideo)?.thumbnail || '#667eea, #764ba2'}
               >
                 <PlayButton>
                   <FiPlay />

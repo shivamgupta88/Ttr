@@ -1,6 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/content/[slug]": "pages/content/[slug].js"
-}
+{"/_app":"pages/_app.js","/_document":"pages/_document.js","/about":"pages/about.html","/content-types/friendship-quotes":"pages/content-types/friendship-quotes.html","/content-types/good-morning":"pages/content-types/good-morning.html","/content-types/hindi-shayari":"pages/content-types/hindi-shayari.html","/content-types/love-quotes":"pages/content-types/love-quotes.html","/content-types/motivational-quotes":"pages/content-types/motivational-quotes.html","/content-types/birthday-wishes":"pages/content-types/birthday-wishes.html","/explore":"pages/explore.html","/language/bengali":"pages/language/bengali.html","/language/english":"pages/language/english.html","/language/hindi":"pages/language/hindi.html","/language/punjabi":"pages/language/punjabi.html","/language/tamil":"pages/language/tamil.html","/language/urdu":"pages/language/urdu.html","/platform/instagram-reels":"pages/platform/instagram-reels.html","/platform/whatsapp-status":"pages/platform/whatsapp-status.html","/platform/facebook-stories":"pages/platform/facebook-stories.html","/platform/youtube-shorts":"pages/platform/youtube-shorts.html","/search":"pages/search.html","/_error":"pages/_error.js","/":"pages/index.js","/content/[slug]":"pages/content/[slug].js","/404":"pages/404.html"}

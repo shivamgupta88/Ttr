@@ -1,26 +1,21 @@
-# Robots.txt for TextToReels.in
-# Optimized for better SEO and search engine crawling
+# Robots.txt for TextToReels.in - Optimized for SEO
+# Updated: 2025-09-21
 
 User-agent: *
 Allow: /
 
-# Allow important search engine bots
-User-agent: Googlebot
-Allow: /
+# High-priority pages for crawling
+Allow: /contact.html
+Allow: /privacy-policy.html
+Allow: /terms-of-service.html
+Allow: /api.html
+Allow: /explore/
+Allow: /content-types/
+Allow: /language/
+Allow: /platform/
+Allow: /content/
 
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-# Block technical directories and files
+# Block technical files and directories
 Disallow: /_next/
 Disallow: /api/
 Disallow: /*.json$
@@ -33,18 +28,7 @@ Disallow: /*&*
 Disallow: /*utm_*
 Disallow: /*#*
 
-# Allow important static pages
-Allow: /contact.html
-Allow: /privacy-policy.html
-Allow: /terms-of-service.html
-Allow: /api.html
-
-# Block duplicate content patterns
-Disallow: /search*
-Disallow: /*?q=*
-Disallow: /*?page=*
-
-# Block aggressive crawlers and scrapers
+# Block aggressive crawlers
 User-agent: AhrefsBot
 Disallow: /
 
@@ -57,20 +41,11 @@ Disallow: /
 User-agent: SemrushBot
 Disallow: /
 
-User-agent: MagpieRSS
-Disallow: /
-
-User-agent: ScreamingFrogSEOSpider
-Disallow: /
-
-# Crawl-delay for better server performance
+# Crawl delay for performance
 Crawl-delay: 1
 
-# Sitemap locations (optimized structure)
+# Sitemap location
 Sitemap: https://texttoreels.in/sitemap.xml
-Sitemap: https://texttoreels.in/sitemap-pages.xml
-Sitemap: https://texttoreels.in/sitemap-content.xml
-Sitemap: https://texttoreels.in/sitemap-categories.xml
 
-# Host directive (helps with canonicalization)
+# Host directive
 Host: https://texttoreels.in
