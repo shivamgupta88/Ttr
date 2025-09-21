@@ -111,6 +111,13 @@ export default function Document() {
           }}
         />
         
+        {/* Umami Analytics */}
+        <script
+          async
+          src="https://cloud.umami.is/script.js"
+          data-website-id="UMAMI_WEBSITE_ID"
+        />
+
         {/* Microsoft Clarity - Replace with your tracking ID */}
         <script
           dangerouslySetInnerHTML={{

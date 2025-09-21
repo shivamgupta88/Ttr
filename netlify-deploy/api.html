@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation | TextToReels.in</title>
+    <meta name="description" content="TextToReels.in API Documentation - Integrate AI-powered text to video generation into your applications. Developer-friendly REST API.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://texttoreels.in/api">
+
+    <!-- Umami Analytics -->
+    <script async src="https://cloud.umami.is/script.js" data-website-id="UMAMI_WEBSITE_ID"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', Arial, sans-serif; line-height: 1.6; color: #2d3748; background: #f7fafc; }
+
+        /* Header Styles */
+        .page-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+        .nav { max-width: 1200px; margin: 0 auto; padding: 0 1rem; height: 80px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: flex; align-items: center; gap: 2rem; }
+        .nav-link { color: #4a5568; font-weight: 500; padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; }
+        .nav-link:hover { color: #667eea; background: rgba(102, 126, 234, 0.1); }
+        .cta-button { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; text-decoration: none; }
+
+        /* Main Content */
+        .main-content { padding-top: 80px; min-height: calc(100vh - 200px); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
+        .header { background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h1 { color: #667eea; font-size: 2.5rem; margin-bottom: 1rem; }
+        h2 { color: #4a5568; font-size: 1.8rem; margin: 2rem 0 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        h3 { color: #2d3748; font-size: 1.3rem; margin: 1.5rem 0 0.5rem; }
+        p { margin-bottom: 1rem; }
+        .back-link { display: inline-block; background: #667eea; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; margin-bottom: 2rem; }
+        .back-link:hover { background: #5a67d8; }
+        .section { background: white; padding: 2rem; border-radius: 12px; margin: 2rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .endpoint { background: #f7fafc; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #667eea; }
+        .method { display: inline-block; background: #48bb78; color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-right: 1rem; }
+        .method.post { background: #ed8936; }
+        .method.put { background: #4299e1; }
+        .method.delete { background: #f56565; }
+        .code-block { background: #2d3748; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; overflow-x: auto; }
+        .code-block pre { margin: 0; }
+        .parameter { background: #edf2f7; padding: 1rem; border-radius: 8px; margin: 0.5rem 0; }
+        .required { color: #f56565; font-weight: 600; }
+        .optional { color: #4299e1; font-weight: 600; }
+        .response { background: #f0fff4; border: 1px solid #9ae6b4; padding: 1rem; border-radius: 8px; margin: 1rem 0; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .feature-card { background: #f7fafc; padding: 1.5rem; border-radius: 8px; text-align: center; }
+        .feature-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+        /* Footer */
+        .footer { background: #2d3748; color: white; padding: 3rem 0 1rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .footer-section h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: #667eea; }
+        .footer-section p, .footer-section a { color: #cbd5e0; text-decoration: none; line-height: 1.6; transition: color 0.2s ease; }
+        .footer-section a:hover { color: white; }
+        .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+        .footer-bottom { text-align: center; padding: 2rem 0 0; margin-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #a0aec0; }
+
+        @media (max-width: 768px) { .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header">
+        <nav class="nav">
+            <a href="/" class="logo">TextToReels.in</a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">🏠 Home</a>
+                <a href="/explore" class="nav-link">🔍 Explore</a>
+                <a href="/search" class="nav-link">🔎 Search</a>
+                <a href="/contact.html" class="nav-link">📞 Contact</a>
+                <a href="/explore" class="cta-button">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="container">
+            <a href="/" class="back-link">← Back to Home</a>
+
+        <div class="header">
+            <h1>API Documentation</h1>
+            <p>Integrate TextToReels.in's powerful AI video generation into your applications with our developer-friendly REST API.</p>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Getting Started</h2>
+
+            <h3>Base URL</h3>
+            <div class="code-block">
+                <pre>https://api.texttoreels.in/v1</pre>
+            </div>
+
+            <h3>Authentication</h3>
+            <p>All API requests require authentication using an API key. Include your API key in the Authorization header:</p>
+            <div class="code-block">
+                <pre>Authorization: Bearer YOUR_API_KEY</pre>
+            </div>
+
+            <h3>Get Your API Key</h3>
+            <p>1. Sign up for a free account at <a href="/">TextToReels.in</a></p>
+            <p>2. Go to your dashboard and navigate to API section</p>
+            <p>3. Generate your API key and start making requests</p>
+        </div>
+
+        <div class="section">
+            <h2>📊 Rate Limits</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🆓</div>
+                    <h3>Free Tier</h3>
+                    <p>100 requests/month</p>
+                    <p>Basic video quality</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Pro Tier</h3>
+                    <p>5,000 requests/month</p>
+                    <p>HD video quality</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Enterprise</h3>
+                    <p>Unlimited requests</p>
+                    <p>Custom solutions</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎬 Video Generation</h2>
+
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <strong>/generate</strong>
+                <p>Generate a video from text input with AI</p>
+            </div>
+
+            <h3>Request Parameters</h3>
+            <div class="parameter">
+                <strong>text</strong> <span class="required">(required)</span><br>
+                The text content to convert into video. Maximum 500 characters.
+            </div>
+            <div class="parameter">
+                <strong>language</strong> <span class="optional">(optional)</span><br>
+                Language code (e.g., "hindi", "english", "punjabi"). Default: "english"
+            </div>
+            <div class="parameter">
+                <strong>platform</strong> <span class="optional">(optional)</span><br>
+                Target platform ("instagram_reels", "youtube_shorts", "whatsapp_status"). Default: "instagram_reels"
+            </div>
+            <div class="parameter">
+                <strong>style</strong> <span class="optional">(optional)</span><br>
+                Video style ("modern_minimal", "bold_typography", "elegant_script"). Default: "modern_minimal"
+            </div>
+            <div class="parameter">
+                <strong>emotion</strong> <span class="optional">(optional)</span><br>
+                Emotional tone ("romantic", "inspiring", "happy", "calm"). Default: "inspiring"
+            </div>
+
+            <h3>Example Request</h3>
+            <div class="code-block">
+                <pre>curl -X POST https://api.texttoreels.in/v1/generate \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "text": "जिंदगी में सफलता पाने के लिए कड़ी मेहनत जरूरी है",
+    "language": "hindi",
+    "platform": "instagram_reels",
+    "style": "bold_typography",
+    "emotion": "inspiring"
+  }'</pre>
+            </div>
+
+            <h3>Response</h3>
+            <div class="response">
+                <div class="code-block">
+                    <pre>{
+  "success": true,
+  "data": {
+    "video_id": "vid_abc123xyz",
+    "status": "processing",
+    "estimated_time": 30,
+    "webhook_url": "https://your-app.com/webhook"
+  },
+  "message": "Video generation started successfully"
+}</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📹 Video Status</h2>
+
+            <div class="endpoint">
+                <span class="method">GET</span>
+                <strong>/video/{video_id}</strong>
+                <p>Check the status and get the download URL of a generated video</p>
+            </div>
+
+            <h3>Example Request</h3>
+            <div class="code-block">
+                <pre>curl -X GET https://api.texttoreels.in/v1/video/vid_abc123xyz \
+  -H "Authorization: Bearer YOUR_API_KEY"</pre>
+            </div>
+
+            <h3>Response (Completed)</h3>
+            <div class="response">
+                <div class="code-block">
+                    <pre>{
+  "success": true,
+  "data": {
+    "video_id": "vid_abc123xyz",
+    "status": "completed",
+    "download_url": "https://cdn.texttoreels.in/videos/vid_abc123xyz.mp4",
+    "thumbnail_url": "https://cdn.texttoreels.in/thumbs/vid_abc123xyz.jpg",
+    "duration": 15,
+    "resolution": "1080x1920",
+    "file_size": 2048576
+  }
+}</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📋 User Account</h2>
+
+            <div class="endpoint">
+                <span class="method">GET</span>
+                <strong>/account</strong>
+                <p>Get account information including usage and limits</p>
+            </div>
+
+            <h3>Response</h3>
+            <div class="response">
+                <div class="code-block">
+                    <pre>{
+  "success": true,
+  "data": {
+    "user_id": "user_123",
+    "plan": "pro",
+    "usage": {
+      "current_month": 245,
+      "limit": 5000,
+      "remaining": 4755
+    },
+    "features": {
+      "hd_quality": true,
+      "priority_processing": true,
+      "webhook_support": true
+    }
+  }
+}</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎨 Supported Options</h2>
+
+            <h3>Languages (50+)</h3>
+            <p><strong>Popular:</strong> hindi, english, punjabi, urdu, bengali, tamil, telugu, gujarati, marathi, kannada, malayalam, odia</p>
+            <p><strong>International:</strong> spanish, french, german, portuguese, arabic, chinese, japanese, korean, russian</p>
+
+            <h3>Platforms</h3>
+            <p>• <strong>instagram_reels</strong> - 1080x1920, 15-30s</p>
+            <p>• <strong>youtube_shorts</strong> - 1080x1920, 15-60s</p>
+            <p>• <strong>whatsapp_status</strong> - 1080x1920, 30s</p>
+            <p>• <strong>facebook_stories</strong> - 1080x1920, 15s</p>
+            <p>• <strong>tiktok</strong> - 1080x1920, 15-60s</p>
+
+            <h3>Styles</h3>
+            <p>• <strong>modern_minimal</strong> - Clean, simple design</p>
+            <p>• <strong>bold_typography</strong> - Strong, impactful text</p>
+            <p>• <strong>elegant_script</strong> - Beautiful, flowing fonts</p>
+            <p>• <strong>gradient_colors</strong> - Vibrant gradient backgrounds</p>
+            <p>• <strong>neon_glow</strong> - Futuristic neon effects</p>
+        </div>
+
+        <div class="section">
+            <h2>⚠️ Error Handling</h2>
+
+            <h3>Common Error Codes</h3>
+            <div class="parameter">
+                <strong>400 Bad Request</strong><br>
+                Invalid parameters or malformed request
+            </div>
+            <div class="parameter">
+                <strong>401 Unauthorized</strong><br>
+                Invalid or missing API key
+            </div>
+            <div class="parameter">
+                <strong>429 Too Many Requests</strong><br>
+                Rate limit exceeded
+            </div>
+            <div class="parameter">
+                <strong>500 Internal Server Error</strong><br>
+                Server error during processing
+            </div>
+
+            <h3>Error Response Format</h3>
+            <div class="code-block">
+                <pre>{
+  "success": false,
+  "error": {
+    "code": "INVALID_LANGUAGE",
+    "message": "Unsupported language code provided",
+    "details": "Supported languages: hindi, english, punjabi..."
+  }
+}</pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔗 Webhooks</h2>
+            <p>Get notified when your video generation is complete:</p>
+
+            <div class="code-block">
+                <pre>POST /generate
+{
+  "text": "Your text here",
+  "webhook_url": "https://your-app.com/webhook"
+}</pre>
+            </div>
+
+            <h3>Webhook Payload</h3>
+            <div class="code-block">
+                <pre>{
+  "event": "video.completed",
+  "video_id": "vid_abc123xyz",
+  "status": "completed",
+  "download_url": "https://cdn.texttoreels.in/videos/vid_abc123xyz.mp4"
+}</pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📞 Support</h2>
+            <p>Need help with the API? We're here to assist!</p>
+            <p>📧 <strong>Email:</strong> api-support@texttoreels.in</p>
+            <p>📚 <strong>Documentation:</strong> <a href="https://docs.texttoreels.in">docs.texttoreels.in</a></p>
+            <p>💬 <strong>Developer Chat:</strong> Join our Discord community</p>
+        </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TextToReels.in</h4>
+                <p>Transform your text into stunning videos with AI-powered technology. Create viral content for Instagram, YouTube, WhatsApp and more in 50+ languages.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/explore">Explore Templates</a>
+                    <a href="/search">Search Content</a>
+                    <a href="/contact.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms-of-service.html">Terms of Service</a>
+                    <a href="/api.html">API Documentation</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <div class="footer-links">
+                    <a href="/contact.html">Contact Support</a>
+                    <a href="/api.html">Developer Docs</a>
+                    <a href="mailto:support@texttoreels.in">Email Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TextToReels.in. All rights reserved. |
+                <a href="/privacy-policy.html" style="color: #cbd5e0; text-decoration: underline;">Privacy Policy</a> |
+                <a href="/terms-of-service.html" style="color: #cbd5e0; text-decoration: underline;">Terms of Service</a> |
+                <a href="/api.html" style="color: #cbd5e0; text-decoration: underline;">API</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
