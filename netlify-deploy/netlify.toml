@@ -1,5 +1,6 @@
 [build]
   publish = "."
+  command = "echo 'Static site ready for deployment'"
 
 # Security headers
 [[headers]]
@@ -10,7 +11,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Cache-Control = "public, max-age=3600"
-    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.googleapis.com fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:"
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.googleapis.com fonts.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' cloud.umami.is www.googletagmanager.com www.clarity.ms; img-src 'self' data: www.google-analytics.com; connect-src 'self' cloud.umami.is www.google-analytics.com www.clarity.ms"
 
 # Static content caching (24 hours)
 [[headers]]
