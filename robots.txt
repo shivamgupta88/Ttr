@@ -4,6 +4,11 @@
 User-agent: *
 Allow: /
 
+# Critical files (must be first)
+Allow: /sitemap.xml
+Allow: /sitemap*.xml
+Allow: /robots.txt
+
 # High-priority pages for crawling
 Allow: /contact.html
 Allow: /privacy-policy.html
@@ -24,10 +29,7 @@ Disallow: /_next/*.css$
 Disallow: /static/*.js$
 Disallow: /static/*.css$
 
-# Allow important files
-Allow: /sitemap.xml
-Allow: /sitemap*.xml
-Allow: /robots.txt
+# These Allow rules are now at the top
 
 # Block query parameters and tracking URLs
 Disallow: /*?*
