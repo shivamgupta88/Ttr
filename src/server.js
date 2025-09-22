@@ -10,6 +10,10 @@ const pagesRoutes = require('./routes/pages');
 const generateRoutes = require('./routes/generate');
 const analyticsRoutes = require('./routes/analytics');
 const sitesRoutes = require('./routes/sites');
+const urlMappingsRoutes = require('./routes/urlMappings');
+
+// Middleware
+const { urlRedirectMiddleware } = require('./middleware/urlRedirectMiddleware');
 
 // Initialize Express
 const app = express();
@@ -113,11 +117,15 @@ app.get('/health', (req, res) => {
   res.json(healthData);
 });
 
+// URL redirect middleware (must be before API routes)
+app.use(urlRedirectMiddleware);
+
 // API Routes
 app.use('/api/pages', pagesRoutes);
 app.use('/api/generate', generateRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/sites', sitesRoutes);
+app.use('/api/url-mappings', urlMappingsRoutes);
 
 // Serve static files (for sitemaps, robots.txt, etc.)
 app.use('/public', express.static('public'));
