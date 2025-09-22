@@ -1,26 +1,15 @@
-# Robots.txt for TextToReels.in - Optimized for SEO
-# Updated: 2025-09-21
+# Robots.txt for TextToReels.in
+# Optimized for SEO - Fixed version 1200
 
 User-agent: *
 Allow: /
 
-# Critical files (must be first)
+# Important files
 Allow: /sitemap.xml
 Allow: /sitemap*.xml
 Allow: /robots.txt
 
-# High-priority pages for crawling
-Allow: /contact.html
-Allow: /privacy-policy.html
-Allow: /terms-of-service.html
-Allow: /api.html
-Allow: /explore/
-Allow: /content-types/
-Allow: /language/
-Allow: /platform/
-Allow: /content/
-
-# Block technical files and directories
+# Block technical files (build/system files)
 Disallow: /_next/
 Disallow: /api/
 Disallow: /_next/*.json$
@@ -29,15 +18,10 @@ Disallow: /_next/*.css$
 Disallow: /static/*.js$
 Disallow: /static/*.css$
 
-# These Allow rules are now at the top
-
-# Block query parameters and tracking URLs
-Disallow: /*?*
-Disallow: /*&*
+# Block tracking URLs only
 Disallow: /*utm_*
-Disallow: /*#*
 
-# Block aggressive crawlers
+# Aggressive crawlers block
 User-agent: AhrefsBot
 Disallow: /
 
@@ -50,11 +34,5 @@ Disallow: /
 User-agent: SemrushBot
 Disallow: /
 
-# Crawl delay for performance
-Crawl-delay: 1
-
-# Sitemap location
+# Sitemap
 Sitemap: https://texttoreels.in/sitemap.xml
-
-# Host directive
-Host: https://texttoreels.in

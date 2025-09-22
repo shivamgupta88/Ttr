@@ -1,5 +1,5 @@
 # Robots.txt for TextToReels.in
-# Optimized for SEO - Fixed version 115822
+# Optimized for SEO - Fixed version 1200
 
 User-agent: *
 Allow: /
