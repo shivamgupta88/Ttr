@@ -1,22 +1,27 @@
 # Robots.txt for TextToReels.in
-# Optimized for SEO - Fixed version
+# Optimized for SEO - Fixed version 115822
 
 User-agent: *
-Disallow: /_next/
-Disallow: /api/
-Disallow: /static/*.js$
-Disallow: /static/*.css$
+Allow: /
 
-# Avoid blocking query params completely
-# (otherwise canonical + filter pages block ho jayenge)
-# Disallow: /*?*   <-- REMOVE if you want Google to index query-based URLs
-
-# Allow important files
+# Important files
 Allow: /sitemap.xml
 Allow: /sitemap*.xml
 Allow: /robots.txt
 
-# Aggressive bots block
+# Block technical files (build/system files)
+Disallow: /_next/
+Disallow: /api/
+Disallow: /_next/*.json$
+Disallow: /_next/*.js$
+Disallow: /_next/*.css$
+Disallow: /static/*.js$
+Disallow: /static/*.css$
+
+# Block tracking URLs only
+Disallow: /*utm_*
+
+# Aggressive crawlers block
 User-agent: AhrefsBot
 Disallow: /
 
