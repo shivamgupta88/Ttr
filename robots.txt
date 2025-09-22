@@ -9,14 +9,15 @@ Allow: /sitemap.xml
 Allow: /sitemap*.xml
 Allow: /robots.txt
 
-# Block technical files (build/system files)
-Disallow: /_next/
+# Allow essential assets for proper page rendering
+Allow: /_next/static/
+Allow: /static/
+
+# Block only sensitive/unnecessary files
 Disallow: /api/
-Disallow: /_next/*.json$
-Disallow: /_next/*.js$
-Disallow: /_next/*.css$
-Disallow: /static/*.js$
-Disallow: /static/*.css$
+Disallow: /_next/data/
+Disallow: /_next/trace
+Disallow: /_next/webpack-hmr
 
 # Block tracking URLs only
 Disallow: /*utm_*

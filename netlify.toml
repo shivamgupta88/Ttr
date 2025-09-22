@@ -95,6 +95,42 @@
   to = "/api.html"
   status = 301
 
+# Redirect old content URLs to proper content-types structure
+[[redirects]]
+  from = "/content/love-quotes-hindi*"
+  to = "/content-types/love-quotes/"
+  status = 301
+
+[[redirects]]
+  from = "/content/*love-quotes*"
+  to = "/content-types/love-quotes/"
+  status = 301
+
+[[redirects]]
+  from = "/content/*motivational*"
+  to = "/content-types/motivational-quotes/"
+  status = 301
+
+[[redirects]]
+  from = "/content/*friendship*"
+  to = "/content-types/friendship-quotes/"
+  status = 301
+
+[[redirects]]
+  from = "/content/*birthday*"
+  to = "/content-types/birthday-wishes/"
+  status = 301
+
+[[redirects]]
+  from = "/content/*hindi-shayari*"
+  to = "/content-types/hindi-shayari/"
+  status = 301
+
+[[redirects]]
+  from = "/content/*good-morning*"
+  to = "/content-types/good-morning/"
+  status = 301
+
 # Content directory handling
 [[redirects]]
   from = "/content/:slug"
