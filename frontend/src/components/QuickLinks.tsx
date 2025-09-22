@@ -169,11 +169,11 @@ const CenteredContainer = styled.div`
   margin-top: 2rem;
 `;
 
-// Mock data - in real app, this would come from API
+// Fixed data with real URLs that exist on the site
 const SAMPLE_LINKS: QuickLink[] = [
   {
-    slug: 'hindi-love-quotes-instagram-reels-romantic',
-    title: 'Hindi Love Quotes for Instagram Reels - Romantic Collection',
+    slug: 'content-types/love-quotes',
+    title: 'Love Quotes & Romantic Shayari - Express Your Feelings',
     theme: 'love_and_romance',
     language: 'hindi',
     platform: 'instagram_reels',
@@ -181,8 +181,8 @@ const SAMPLE_LINKS: QuickLink[] = [
     linkType: 'same_cluster'
   },
   {
-    slug: 'motivational-quotes-english-youtube-shorts',
-    title: 'Motivational Quotes for YouTube Shorts - Success Inspiration',
+    slug: 'content-types/motivational-quotes',
+    title: 'Motivational Quotes for Success - Inspire Yourself',
     theme: 'motivation_and_success',
     language: 'english',
     platform: 'youtube_shorts',
@@ -190,8 +190,8 @@ const SAMPLE_LINKS: QuickLink[] = [
     linkType: 'related_theme'
   },
   {
-    slug: 'friendship-quotes-punjabi-whatsapp-status',
-    title: 'Friendship Quotes in Punjabi for WhatsApp Status',
+    slug: 'content-types/friendship-quotes',
+    title: 'Friendship Quotes - Celebrate True Bonds',
     theme: 'friendship',
     language: 'punjabi',
     platform: 'whatsapp_status',
@@ -199,8 +199,8 @@ const SAMPLE_LINKS: QuickLink[] = [
     linkType: 'same_language'
   },
   {
-    slug: 'birthday-wishes-hindi-facebook-stories',
-    title: 'Birthday Wishes in Hindi for Facebook Stories',
+    slug: 'content-types/birthday-wishes',
+    title: 'Birthday Wishes & Celebrations - Perfect for Special Days',
     theme: 'birthday_special',
     language: 'hindi',
     platform: 'facebook_stories',
@@ -208,8 +208,8 @@ const SAMPLE_LINKS: QuickLink[] = [
     linkType: 'high_traffic'
   },
   {
-    slug: 'good-morning-quotes-english-instagram-stories',
-    title: 'Good Morning Quotes for Instagram Stories - Positive Vibes',
+    slug: 'content-types/good-morning',
+    title: 'Good Morning Messages - Start Your Day with Positivity',
     theme: 'good_morning',
     language: 'english',
     platform: 'instagram_stories',
@@ -217,13 +217,67 @@ const SAMPLE_LINKS: QuickLink[] = [
     linkType: 'related_theme'
   },
   {
-    slug: 'festival-wishes-gujarati-whatsapp-status',
-    title: 'Festival Wishes in Gujarati for WhatsApp Status',
+    slug: 'content-types/hindi-shayari',
+    title: 'Hindi Shayari & Poetry - Beautiful Hindi Expressions',
     theme: 'festival_wishes',
-    language: 'gujarati',
+    language: 'hindi',
     platform: 'whatsapp_status',
     relevance: 'medium',
     linkType: 'same_language'
+  },
+  {
+    slug: 'platform/instagram-reels',
+    title: 'Instagram Reels Creator - Viral Content Templates',
+    theme: 'platform_specific',
+    language: 'english',
+    platform: 'instagram_reels',
+    relevance: 'high',
+    linkType: 'platform_focused'
+  },
+  {
+    slug: 'platform/youtube-shorts',
+    title: 'YouTube Shorts Generator - Quick Video Content',
+    theme: 'platform_specific',
+    language: 'english',
+    platform: 'youtube_shorts',
+    relevance: 'high',
+    linkType: 'platform_focused'
+  },
+  {
+    slug: 'platform/whatsapp-status',
+    title: 'WhatsApp Status Videos - Perfect for Status Updates',
+    theme: 'platform_specific',
+    language: 'hindi',
+    platform: 'whatsapp_status',
+    relevance: 'medium',
+    linkType: 'platform_focused'
+  },
+  {
+    slug: 'language/hindi',
+    title: 'Hindi Content Templates - Regional Language Content',
+    theme: 'language_specific',
+    language: 'hindi',
+    platform: 'all_platforms',
+    relevance: 'medium',
+    linkType: 'language_focused'
+  },
+  {
+    slug: 'language/punjabi',
+    title: 'Punjabi Video Content - Culture & Music',
+    theme: 'language_specific',
+    language: 'punjabi',
+    platform: 'all_platforms',
+    relevance: 'medium',
+    linkType: 'language_focused'
+  },
+  {
+    slug: 'language/english',
+    title: 'English Content Library - Global Content Templates',
+    theme: 'language_specific',
+    language: 'english',
+    platform: 'all_platforms',
+    relevance: 'medium',
+    linkType: 'language_focused'
   }
 ];
 
