@@ -1,0 +1,51 @@
+# Robots.txt for TextToReels.in - Optimized for SEO
+# Updated: 2025-09-21
+
+User-agent: *
+Allow: /
+
+# High-priority pages for crawling
+Allow: /contact.html
+Allow: /privacy-policy.html
+Allow: /terms-of-service.html
+Allow: /api.html
+Allow: /explore/
+Allow: /content-types/
+Allow: /language/
+Allow: /platform/
+Allow: /content/
+
+# Block technical files and directories
+Disallow: /_next/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Block query parameters and tracking URLs
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*utm_*
+Disallow: /*#*
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Crawl delay for performance
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://texttoreels.in/sitemap.xml
+
+# Host directive
+Host: https://texttoreels.in
