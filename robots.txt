@@ -18,9 +18,16 @@ Allow: /content/
 # Block technical files and directories
 Disallow: /_next/
 Disallow: /api/
-Disallow: /*.json$
-Disallow: /*.js$
-Disallow: /*.css$
+Disallow: /_next/*.json$
+Disallow: /_next/*.js$
+Disallow: /_next/*.css$
+Disallow: /static/*.js$
+Disallow: /static/*.css$
+
+# Allow important files
+Allow: /sitemap.xml
+Allow: /sitemap*.xml
+Allow: /robots.txt
 
 # Block query parameters and tracking URLs
 Disallow: /*?*
