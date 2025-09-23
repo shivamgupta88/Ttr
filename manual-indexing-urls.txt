@@ -1,0 +1,39 @@
+HIGH PRIORITY URLs FOR MANUAL INDEXING
+=========================================
+
+1. Most Recent/Updated Content URLs:
+https://texttoreels.in/content/love-quotes-hindi-dark-theme-twitter-post-mohabbat-shayari-02f0
+https://texttoreels.in/content/love-quotes-hindi-dark-theme-twitter-post-mohabbat-shayari-044a
+https://texttoreels.in/content/love-quotes-hindi-dark-theme-twitter-post-mohabbat-shayari-04d3
+https://texttoreels.in/content/love-quotes-hindi-dark-theme-twitter-post-mohabbat-shayari-078f
+https://texttoreels.in/content/love-quotes-hindi-dark-theme-twitter-post-mohabbat-shayari-07c1
+https://texttoreels.in/content/love-quotes-hindi-dark-theme-twitter-post-mohabbat-shayari-089d
+https://texttoreels.in/content/love-quotes-hindi-dark-theme-twitter-post-mohabbat-shayari-0cdd
+https://texttoreels.in/content/love-quotes-hindi-dark-theme-twitter-post-mohabbat-shayari-0eca
+https://texttoreels.in/content/love-quotes-hindi-dark-theme-twitter-post-mohabbat-shayari-1004
+https://texttoreels.in/content/love-quotes-hindi-dark-theme-twitter-post-mohabbat-shayari-1018
+
+2. Category Pages (Already Indexed but Resubmit):
+https://texttoreels.in/content-types/love-quotes/
+https://texttoreels.in/content-types/hindi-shayari/
+https://texttoreels.in/content-types/motivational-quotes/
+https://texttoreels.in/platform/instagram-reels/
+https://texttoreels.in/platform/whatsapp-status/
+
+3. Language Pages:
+https://texttoreels.in/language/hindi/
+https://texttoreels.in/language/english/
+https://texttoreels.in/language/urdu/
+
+MANUAL INDEXING STEPS:
+=====================
+1. Go to Google Search Console
+2. Use "URL Inspection" tool
+3. Enter each URL above
+4. Click "Request Indexing" for each
+5. Wait 24-48 hours for indexing
+
+REMOVE INVALID SITEMAPS:
+========================
+1. Remove: https://ai.texttoreels.in/sitemap.xml (subdomain doesn't exist)
+2. Re-submit: https://texttoreels.in/sitemap-content.xml (after deployment)
